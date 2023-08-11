@@ -1,0 +1,94 @@
+/* Reset some default styles */
+body, h1, h2, button {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-image: url(https://th.bing.com/th/id/R.0c5c3d46eff1b4e6100ddbd8cdb5202b?rik=Vnb8tPay5Cd3eQ&pid=ImgRaw&r=0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background: linear-gradient(to bottom right, #ff6b6b, #ff3636); */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  /* background: linear-gradient(to bottom right, #ff6b6b, #ff3636); */
+  background-color: rgba(233, 62, 62, 0.9);
+  padding: 20px 60px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.btn-timer {
+  background-color: white;
+  color:  #ff6b6b;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-timer:hover {
+  background-color: rgb(224, 224, 224);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.div-principal {
+  text-align: center;
+}
+
+.contador {
+  font-size: 150px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.aviso {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(207, 27, 27);
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.invisivel{
+  display: none;
+}
+
+.div-btn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-start, .btn-stop {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 50px;
+  color:  #ff6b6b;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-start:hover, .btn-stop:hover {
+  background-color: rgb(224, 224, 224);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
