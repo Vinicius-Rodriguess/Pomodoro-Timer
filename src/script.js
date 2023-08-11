@@ -38,7 +38,7 @@ document.addEventListener('click', (e) => {
             return;
         }
         
-        timer = setInterval(contagemRegressiva, 1000);
+        timer = setInterval(contagemRegressiva, 10);
     }
 
     if (e.target.classList.contains('stop')) {
