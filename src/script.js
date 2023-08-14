@@ -77,10 +77,24 @@ document.addEventListener('click', (e) => {
         timer = null;
         minuto = input.value;
         segundo = 0;
-        contador.innerHTML = input.value + ":00";
-        escolha = input.value;
+
+        if(input.value > 1440){
+            mensagem('add');
+            aviso.innerHTML = "Tempo invalido!"
+            minuto = 0;
+            return
+        }
+
+        if(input.value === ''){
+            return
+        } else if(input.value < 10) {
+            contador.innerHTML = "0" + input.value + ":00";
+        } else{
+            contador.innerHTML = input.value + ":00";
+        }
+
         mensagem();
-        console.log(input.value);
+        escolha = input.value;
     }
 });
 
@@ -103,6 +117,7 @@ const contagemRegressiva = () => {
 const mensagem = (x) => {
     if (x === "add") {
         aviso.classList.remove('invisivel');
+        aviso.innerHTML = "Timer concluido!"
     } else {
         aviso.classList.add('invisivel');
     }
