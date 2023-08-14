@@ -20,7 +20,7 @@ body {
 
 .container {
   /* background: linear-gradient(to bottom right, #ff6b6b, #ff3636); */
-  background-color: rgba(233, 62, 62, 0.9);
+  background-color: rgba(233, 62, 62, 0.88);
   padding: 20px 60px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -50,7 +50,12 @@ body {
 }
 
 .div-principal {
+  background-color: rgba(255, 255, 255, 0.2);
   text-align: center;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contador {
@@ -61,10 +66,7 @@ body {
 
 .aviso {
   font-size: 18px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(207, 27, 27);
-  border-radius: 3px;
-  padding: 3px;
+  color: rgb(22, 19, 19);
 }
 
 .invisivel{
@@ -74,21 +76,66 @@ body {
 .div-btn {
   margin-top: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
 }
 
-.btn-start, .btn-stop {
+.btn-stop, .btn-reset {
   background-color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 50px;
+  padding: 10px 40px;
   color:  #ff6b6b;
   cursor: pointer;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.btn-start:hover, .btn-stop:hover {
+ .btn-stop:hover, .btn-reset:hover {
   background-color: rgb(224, 224, 224);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-start{
+  background-color: rgb(16, 151, 11);
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px 150px;
+  color:  #ffffff;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-start:hover{
+  background-color: rgb(14, 119, 10);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-escolha{
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: green;
+  text-align: center;
+}
+
+.input-escolha:focus{
+  border: none;
+  
+}
+
+.div-escolher{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.div-invisivel{
+  display: none;
+}
+
+.div-aviso{
+ margin-bottom: 20px;
 }

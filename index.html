@@ -12,16 +12,26 @@
   <section class="container">
     <div class="nav">
       <button class="25min btn-timer">Longo</button>
-      <button class="15min btn-timer">Médio</button>
+      <button class="15min btn-timer">Medio</button>
       <button class="5min btn-timer">Curto</button>
+      <button class="escolha btn-timer">+</button>
+    </div>
+    <div class="div-escolher div-invisivel">
+      <button class="aplicar btn-timer">Aplicar</button>
+      <input type="number" class="input-escolha" min="0" placeholder="Tempo desejado">
     </div>
     <div class="div-principal">
       <h1 class="contador">00:00</h1>
-      <h2 class="aviso invisivel">Seu tempo acabou!</h2>
+    </div>
+    <div class="div-aviso">
+      <h2 class="aviso invisivel">Timer concluido!</h2>
+    </div>
+    <div>
+      <button class="start btn-start">Start</button>
     </div>
     <div class="div-btn">
-      <button class="start btn-stop">Start</button>
-      <button class="stop btn-start">Stop</button>
+      <button class="stop btn-stop">Stop</button>
+      <button class="reset btn-reset">Reset</button>
     </div>
     <script src="./src/script.js"></script>
   </section>

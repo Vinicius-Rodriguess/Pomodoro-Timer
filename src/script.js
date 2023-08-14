@@ -1,8 +1,11 @@
 let segundo = 0;
 let minuto = 0;
 let timer = null; 
+let escolha = 0;
 const contador = document.querySelector('.contador');
 const aviso = document.querySelector('.aviso');
+const divInput = document.querySelector('.div-escolher');
+const input = document.querySelector('.input-escolha');
 
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('25min')) {
@@ -11,6 +14,7 @@ document.addEventListener('click', (e) => {
         minuto = 25;
         segundo = 0;
         contador.innerHTML = `25:00`;
+        escolha = 25;
         mensagem();
     }
     
@@ -20,6 +24,7 @@ document.addEventListener('click', (e) => {
         minuto = 15;
         segundo = 0;
         contador.innerHTML = `15:00`;
+        escolha = 15;
         mensagem();
     }
     
@@ -29,21 +34,53 @@ document.addEventListener('click', (e) => {
         minuto = 5;
         segundo = 0;
         contador.innerHTML = `05:00`;
+        escolha = 5;
         mensagem();
     }
 
+    if (e.target.classList.contains('escolha')) {
+        btnEscolha();
+    }
+
     if (e.target.classList.contains('start')) {
-        
         if (minuto < 1 || timer) {
             return;
         }
-        
-        timer = setInterval(contagemRegressiva, 10);
+        timer = setInterval(contagemRegressiva, 10); 
     }
 
     if (e.target.classList.contains('stop')) {
         clearInterval(timer);
         timer = null;
+    }
+
+    if (e.target.classList.contains('reset')) {
+        clearInterval(timer);
+        timer = null;
+
+        if (escolha === 25) {
+            contador.innerHTML = `25:00`;
+            minuto = 25;
+        } else if (escolha === 15) {
+            contador.innerHTML = `15:00`;
+            minuto = 15;
+        } else if (escolha === 5) {
+            contador.innerHTML = `05:00`;
+            minuto = 5;
+        } else if (escolha == input.value) {
+            contador.innerHTML = input.value + ":00";
+        }
+    }
+
+    if (e.target.classList.contains('aplicar')) {
+        clearInterval(timer);
+        timer = null;
+        minuto = input.value;
+        segundo = 0;
+        contador.innerHTML = input.value + ":00";
+        escolha = input.value;
+        mensagem();
+        console.log(input.value);
     }
 });
 
@@ -64,12 +101,20 @@ const contagemRegressiva = () => {
 };
 
 const mensagem = (x) => {
-    if( x === "add"){
+    if (x === "add") {
         aviso.classList.remove('invisivel');
     } else {
         aviso.classList.add('invisivel');
     }
-}
+};
+
+const btnEscolha = () => {
+    if (divInput.classList.contains('div-invisivel')) {
+        divInput.classList.remove('div-invisivel');
+    } else {
+        divInput.classList.add('div-invisivel');
+    }
+};
 
 const doisZeros = (digito) => {
     return digito < 10 ? '0' + digito : digito;
