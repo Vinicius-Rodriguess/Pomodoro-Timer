@@ -1,4 +1,3 @@
-/* Reset some default styles */
 body, h1, h2, button {
   margin: 0;
   padding: 0;
@@ -10,7 +9,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background: linear-gradient(to bottom right, #ff6b6b, #ff3636); */
   margin: 0;
   display: flex;
   justify-content: center;
@@ -34,7 +32,7 @@ body {
 
 .btn-timer {
   background-color: white;
-  color:  #ff6b6b;
+  color: #ff6b6b;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -69,7 +67,7 @@ body {
   color: rgb(22, 19, 19);
 }
 
-.invisivel{
+.invisivel {
   display: none;
 }
 
@@ -85,35 +83,35 @@ body {
   border: none;
   border-radius: 5px;
   padding: 10px 40px;
-  color:  #ff6b6b;
+  color: #ff6b6b;
   cursor: pointer;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
- .btn-stop:hover, .btn-reset:hover {
+.btn-stop:hover, .btn-reset:hover {
   background-color: rgb(224, 224, 224);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn-start{
+.btn-start {
   background-color: rgb(16, 151, 11);
   border: none;
   border-radius: 5px;
   font-size: 20px;
   padding: 10px 150px;
-  color:  #ffffff;
+  color: #ffffff;
   cursor: pointer;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.btn-start:hover{
+.btn-start:hover {
   background-color: rgb(14, 119, 10);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.input-escolha{
+.input-escolha {
   border-radius: 5px;
   border: none;
   outline: none;
@@ -121,35 +119,34 @@ body {
   text-align: center;
 }
 
-.input-escolha:focus{
+.input-escolha:focus {
   border: none;
-  
 }
 
-.div-escolher{
+.div-escolher {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.div-invisivel{
+.div-invisivel {
   display: none;
 }
 
-.div-aviso{
- margin-bottom: 20px;
+.div-aviso {
+  margin-bottom: 20px;
 }
 
-@media(max-width: 700px){
-    .container{
-      padding: 20px 5px;
-    }
+@media (max-width: 700px) {
+  .container {
+    padding: 20px 0px;
+  }
 
-    .div-principal{
-      font-size: 50px;
-    }
+  .div-principal {
+    font-size: 50px;
+  }
 
-    .contador{
-      font-size: 140px;
-    }
+  .contador {
+    font-size: 140px;
+  }
 }

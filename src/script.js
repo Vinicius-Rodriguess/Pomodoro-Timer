@@ -5,37 +5,23 @@ let escolha = 0;
 const contador = document.querySelector('.contador');
 const aviso = document.querySelector('.aviso');
 const divInput = document.querySelector('.div-escolher');
-const input = document.querySelector('.input-escolha');
 
-document.addEventListener('click', (e) => {
+document.addEventListener('click', btnEscolhido);
+
+function btnEscolhido(e) {
+
+    const inputValue = document.querySelector('.input-escolha').value;
+
     if (e.target.classList.contains('25min')) {
-        clearInterval(timer);
-        timer = null;
-        minuto = 25;
-        segundo = 0;
-        contador.innerHTML = `25:00`;
-        escolha = 25;
-        mensagem();
+        definirTempo(25, 0);
     }
     
     if (e.target.classList.contains('15min')) {
-        clearInterval(timer);
-        timer = null;
-        minuto = 15;
-        segundo = 0;
-        contador.innerHTML = `15:00`;
-        escolha = 15;
-        mensagem();
+        definirTempo(15, 0);
     }
     
     if (e.target.classList.contains('5min')) {
-        clearInterval(timer);
-        timer = null;
-        minuto = 5;
-        segundo = 0;
-        contador.innerHTML = `05:00`;
-        escolha = 5;
-        mensagem();
+        definirTempo(5, 0);
     }
 
     if (e.target.classList.contains('escolha')) {
@@ -43,6 +29,7 @@ document.addEventListener('click', (e) => {
     }
 
     if (e.target.classList.contains('start')) {
+
         if (minuto < 1 || timer) {
             return;
         }
@@ -58,47 +45,61 @@ document.addEventListener('click', (e) => {
         clearInterval(timer);
         timer = null;
 
-        if (escolha === 25) {
-            contador.innerHTML = `25:00`;
+        if(escolha === 0){
+            return;
+        } else if(escolha === 25) {
             minuto = 25;
+            contador.textContent = `25:00`;
         } else if (escolha === 15) {
-            contador.innerHTML = `15:00`;
             minuto = 15;
+            contador.textContent = `15:00`;
         } else if (escolha === 5) {
-            contador.innerHTML = `05:00`;
             minuto = 5;
-        } else if (escolha == input.value) {
-            contador.innerHTML = input.value + ":00";
+            contador.textContent = `05:00`;
+        } else if (escolha == inputValue) {
+            contador.textContent = inputValue + ":00";
+            minuto = inputValue;
         }
     }
 
     if (e.target.classList.contains('aplicar')) {
         clearInterval(timer);
         timer = null;
-        minuto = input.value;
+        minuto = inputValue;
         segundo = 0;
 
-        if(input.value > 1440){
-            mensagem('add');
-            aviso.innerHTML = "Tempo invalido!"
+        if(inputValue > 1440){
             minuto = 0;
-            return
+            aviso.textContent = "Tempo invalido!"
+            mensagem('visivel');
+            return;
         }
 
-        if(input.value === ''){
-            return
-        } else if(input.value < 10) {
-            contador.innerHTML = "0" + input.value + ":00";
+        if(inputValue === ''){
+            return;
+        } else if(inputValue < 10) {
+            contador.textContent = "0" + inputValue + ":00";
         } else{
-            contador.innerHTML = input.value + ":00";
+            contador.textContent = inputValue + ":00";
         }
 
+        escolha = inputValue;
         mensagem();
-        escolha = input.value;
     }
-});
 
-const contagemRegressiva = () => {
+    function definirTempo(tempoMinutos, tempoSegundos){
+        clearInterval(timer);
+        timer = null;
+        minuto = tempoMinutos;
+        segundo = tempoSegundos;
+        escolha = tempoMinutos;
+        contador.textContent = `${doisZeros(tempoMinutos)}:${doisZeros(tempoSegundos)}`;
+        mensagem();
+    }
+
+}
+
+function contagemRegressiva(){
     segundo--;
 
     if (segundo < 0) {
@@ -108,22 +109,22 @@ const contagemRegressiva = () => {
 
     if (segundo === 0 && minuto === 0) {
         clearInterval(timer);
-        mensagem("add");
+        mensagem("visivel");
     }
 
-    contador.innerHTML = `${doisZeros(minuto)}:${doisZeros(segundo)}`;
+    contador.textContent = `${doisZeros(minuto)}:${doisZeros(segundo)}`;
 };
 
-const mensagem = (x) => {
-    if (x === "add") {
+function mensagem(x){
+    if (x === "visivel") {
         aviso.classList.remove('invisivel');
-        aviso.innerHTML = "Timer concluido!"
+        aviso.textContent = "Timer concluido!"
     } else {
         aviso.classList.add('invisivel');
     }
 };
 
-const btnEscolha = () => {
+function btnEscolha(){
     if (divInput.classList.contains('div-invisivel')) {
         divInput.classList.remove('div-invisivel');
     } else {
@@ -131,6 +132,6 @@ const btnEscolha = () => {
     }
 };
 
-const doisZeros = (digito) => {
+function doisZeros (digito) {
     return digito < 10 ? '0' + digito : digito;
 };
