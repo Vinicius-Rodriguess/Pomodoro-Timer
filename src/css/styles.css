@@ -1,11 +1,12 @@
-body, h1, h2, button {
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background-image: url(https://th.bing.com/th/id/R.0c5c3d46eff1b4e6100ddbd8cdb5202b?rik=Vnb8tPay5Cd3eQ&pid=ImgRaw&r=0);
+  background-image: url(../img/R.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -19,7 +20,7 @@ body {
 .container {
   background: linear-gradient(to bottom right, #ff6b6b, #ff3636);
   padding: 25px 10px;
-  border-radius: 20px;
+  border-radius: 35px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
@@ -50,6 +51,7 @@ body {
 .div-principal {
   background-color: rgba(255, 255, 255, 0.2);
   text-align: center;
+  width: 450px;
   padding: 10px;
   margin: 30px;
   border-radius: 5px;
