@@ -1,5 +1,6 @@
-# Timer Pomodoro 
-### Feito em Html, Css e JavaScript
-<a href="https://vinicius-rodriguess.github.io/Pomodoro/">Clique aqui para testar o projeto</a>
+# Pomodoro Timer
+### It's a Pomodoro timer.
+<a href="https://vinicius-rodriguess.github.io/Pomodoro-Timer/">
+Click here to test the project!</a>
 <p></p>
 <img src="./src/img/Pomo2.png/">
